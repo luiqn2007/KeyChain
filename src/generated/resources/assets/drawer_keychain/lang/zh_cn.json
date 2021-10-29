@@ -1,0 +1,11 @@
+{
+  "drawer_keychain.tooltips.ban": "\u7981\u7528",
+  "drawer_keychain.tooltips.change": "\u66F4\u6539",
+  "drawer_keychain.tooltips.drawer": "\u62BD\u5C49\u94A5\u5319",
+  "drawer_keychain.tooltips.hide": "\u9690\u85CF",
+  "drawer_keychain.tooltips.number": "\u6570\u91CF\u94A5\u5319",
+  "drawer_keychain.tooltips.show": "\u663E\u793A",
+  "drawer_keychain.tooltips.shroud": "\u5C4F\u853D\u94A5\u5319",
+  "item.drawer_keychain.key_chain": "\u62BD\u5C49\u94A5\u5319\u6263",
+  "item.drawer_keychain.key_chain.desc": "\u4E09\u5408\u4E00"
+}

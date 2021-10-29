@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "drawer_keychain:key_chain"
+    ]
+  },
+  "criteria": {
+    "has_keys": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "drawer_keychain:key_chain"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "drawer_keychain:key_chain"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_keys",
+      "has_the_recipe"
+    ]
+  ]
+}

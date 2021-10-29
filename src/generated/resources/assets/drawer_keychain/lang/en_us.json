@@ -1,0 +1,11 @@
+{
+  "drawer_keychain.tooltips.ban": "Ban",
+  "drawer_keychain.tooltips.change": "Change",
+  "drawer_keychain.tooltips.drawer": "DrawerKey",
+  "drawer_keychain.tooltips.hide": "Hide",
+  "drawer_keychain.tooltips.number": "QuantifyKey",
+  "drawer_keychain.tooltips.show": "Show",
+  "drawer_keychain.tooltips.shroud": "ConcealmentKey",
+  "item.drawer_keychain.key_chain": "Drawer Keychain",
+  "item.drawer_keychain.key_chain.desc": "Three IN One"
+}

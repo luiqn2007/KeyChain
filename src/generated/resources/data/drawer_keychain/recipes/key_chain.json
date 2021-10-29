@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "keychain",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "item": "storagedrawers:drawer_key"
+    },
+    {
+      "item": "storagedrawers:quantify_key"
+    },
+    {
+      "item": "storagedrawers:shroud_key"
+    }
+  ],
+  "result": {
+    "item": "drawer_keychain:key_chain"
+  }
+}
