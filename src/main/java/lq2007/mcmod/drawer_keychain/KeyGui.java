@@ -7,13 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-
-import static lq2007.mcmod.drawer_keychain.Status.Type.*;
-import static lq2007.mcmod.drawer_keychain.Status.Value.*;
 
 @OnlyIn(Dist.CLIENT)
 public class KeyGui extends Screen {
@@ -57,6 +53,13 @@ public class KeyGui extends Screen {
                 blit(stack, status.selectedX, type.selectedY, 0, 82, 22, 22, TEX_W, TEX_H);
             }
         }
+        for (Status.Value value : Status.Value.values()) {
+            for (Status.Type type : Status.Type.values()) {
+                if (isIn(mouseX, mouseY, value.btnX, type.btnY)) {
+                    renderTooltip(stack, value.text, mouseX - left, mouseY - top);
+                }
+            }
+        }
         stack.popPose();
     }
 
@@ -72,7 +75,7 @@ public class KeyGui extends Screen {
 
         for (Status.Type type : Status.Type.values()) {
             for (Status.Value value : Status.Value.values()) {
-                if (isInButton(mouseX, mouseY, value.btnX, type.btnY)) {
+                if (isIn(mouseX, mouseY, value.btnX, type.btnY)) {
                     new StatePacket(hand, type, value).send();
                     return true;
                 }
@@ -82,7 +85,7 @@ public class KeyGui extends Screen {
         return false;
     }
 
-    private boolean isInButton(double mouseX, double mouseY, int x, int y) {
+    private boolean isIn(double mouseX, double mouseY, int x, int y) {
         mouseX = mouseX - left;
         mouseY = mouseY - top;
         return mouseX >= x && mouseY >= y && mouseX <= x + 14 && mouseY <= y + 14;

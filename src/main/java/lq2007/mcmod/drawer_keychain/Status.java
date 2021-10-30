@@ -2,7 +2,10 @@ package lq2007.mcmod.drawer_keychain;
 
 import com.jaquadro.minecraft.storagedrawers.api.storage.IDrawerAttributesModifiable;
 import com.jaquadro.minecraft.storagedrawers.api.storage.attribute.LockAttribute;
+import net.minecraft.util.text.IFormattableTextComponent;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.Locale;
 
@@ -46,11 +49,13 @@ public class Status {
 
         public final String name;
         public final int selectedY, btnY;
+        public final IFormattableTextComponent text;
 
         Type(int selectedY, int btnY) {
-            name = name().toLowerCase(Locale.ROOT);
+            this.name = name().toLowerCase(Locale.ROOT);
             this.selectedY = selectedY;
             this.btnY = btnY;
+            this.text = new TranslationTextComponent("drawer_keychain.tooltips." + this.name);
         }
 
         public abstract void set(IDrawerAttributesModifiable attrs, boolean enabled);
@@ -91,12 +96,14 @@ public class Status {
         public final String name;
         public final TextFormatting color;
         public final int selectedX, btnX;
+        public final IFormattableTextComponent text;
 
         Value(TextFormatting color, int selectedX, int btnX) {
             this.name = name().toLowerCase(Locale.ROOT);
             this.color = color;
             this.selectedX = selectedX;
             this.btnX = btnX;
+            this.text = new TranslationTextComponent("drawer_keychain.tooltips." + this.name).withStyle(color);
         }
 
         public abstract void apply(Type type, IDrawerAttributesModifiable attrs);
